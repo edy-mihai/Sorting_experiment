@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 #include "algs.h"
 
 void readFromFile(char *filename, int arr[], int n)
@@ -50,66 +51,68 @@ int main()
     printf("File name: ");
     scanf("%s", filename);
 
-    clock_t start, end;
-    double time_used;
+    LARGE_INTEGER frequency;
+    LARGE_INTEGER start, end;
+    double time_used_ns;
+    QueryPerformanceFrequency(&frequency);
 
     readFromFile(filename, original, n);
 
     // bubble sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     bubbleSort(test, n);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Bubble Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Bubble Sort: %.0f ns\n", time_used_ns);
 
     // insertion sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     insertionSort(test, n);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Insertion Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Insertion Sort: %.0f ns\n", time_used_ns);
 
     // selection sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     selectionSort(test, n);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Selection Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Selection Sort: %.0f ns\n", time_used_ns);
 
     // merge sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     mergeSort(test, 0, n - 1);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Merge Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Merge Sort: %.0f ns\n", time_used_ns);
 
     // quick sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     quickSort(test, 0, n - 1);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Quick Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Quick Sort: %.0f ns\n", time_used_ns);
 
     // heap sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     heapSort(test, n);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Heap Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Heap Sort: %.0f ns\n", time_used_ns);
 
     // radix sort
     copyArray(original, test, n);
-    start = clock();
+    QueryPerformanceCounter(&start);
     radixSort(test, n);
-    end = clock();
-    time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Radix Sort: %f s\n", time_used);
+    QueryPerformanceCounter(&end);
+    time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    printf("Radix Sort: %.0f ns\n", time_used_ns);
 
     free(original);
     free(test);
