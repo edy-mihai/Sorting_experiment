@@ -4,11 +4,19 @@
 
 int main()
 {
-    int n;
+    int n, choice;
     char filename[100];
 
     printf("Numbers to generate: ");
     scanf("%d", &n);
+
+    printf("Select data type:\n");
+    printf("1. Fully Random\n");
+    printf("2. Partially Sorted\n");
+    printf("3. Fully Sorted\n");
+    printf("4. Reversed\n");
+    printf("Choice (1-4): ");
+    scanf("%d", &choice);
 
     printf("File name: ");
     scanf("%s", filename);
@@ -24,8 +32,30 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        int random_nr = rand();
-        fprintf(fp, "%d\n", random_nr);
+        int rndm_prct = rand() % 100;
+        if (choice == 1)
+        {
+            fprintf(fp, "%d\n", rand());
+        }
+        else if (choice == 2)
+        {
+            if (rndm_prct < 5)
+            {
+                fprintf(fp, "%d\n", rand());
+            }
+            else
+            {
+                fprintf(fp, "%d\n", i);
+            }
+        }
+        else if (choice == 3)
+        {
+            fprintf(fp, "%d\n", i + 1);
+        }
+        else if (choice == 4)
+        {
+            fprintf(fp, "%d\n", n - i);
+        }
     }
 
     fclose(fp);
