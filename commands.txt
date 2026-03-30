@@ -1,0 +1,7 @@
+commands for main.c
+    gcc main.c algs.c -o experiment.exe
+    .\experiment.exe
+
+commands for gen.c
+    gcc gen.c -o gen.exe
+    .\gen.exe
