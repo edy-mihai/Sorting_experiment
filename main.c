@@ -54,6 +54,12 @@ int main()
     LARGE_INTEGER frequency;
     LARGE_INTEGER start, end;
     double time_used_ns;
+    FILE *csv = fopen("benchmark_results.csv", "a");
+    if (csv == NULL)
+    {
+        printf("Error opening csv file.\n");
+        exit(1);
+    }
     QueryPerformanceFrequency(&frequency);
 
     readFromFile(filename, original, n);
@@ -65,6 +71,7 @@ int main()
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
     printf("Bubble Sort: %.0f ns\n", time_used_ns);
+    fprintf(csv, "%s,Bubble Sort,%.0f\n", filename, time_used_ns);
 
     // insertion sort
     copyArray(original, test, n);
@@ -72,6 +79,7 @@ int main()
     insertionSort(test, n);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Insertion Sort,%.0f\n", filename, time_used_ns);
     printf("Insertion Sort: %.0f ns\n", time_used_ns);
 
     // selection sort
@@ -80,6 +88,7 @@ int main()
     selectionSort(test, n);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Selection Sort,%.0f\n", filename, time_used_ns);
     printf("Selection Sort: %.0f ns\n", time_used_ns);
 
     // merge sort
@@ -88,6 +97,7 @@ int main()
     mergeSort(test, 0, n - 1);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Merge Sort,%.0f\n", filename, time_used_ns);
     printf("Merge Sort: %.0f ns\n", time_used_ns);
 
     // quick sort
@@ -96,6 +106,7 @@ int main()
     quickSort(test, 0, n - 1);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Quick Sort,%.0f\n", filename, time_used_ns);
     printf("Quick Sort: %.0f ns\n", time_used_ns);
 
     // heap sort
@@ -104,6 +115,7 @@ int main()
     heapSort(test, n);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Heap Sort,%.0f\n", filename, time_used_ns);
     printf("Heap Sort: %.0f ns\n", time_used_ns);
 
     // radix sort
@@ -112,10 +124,13 @@ int main()
     radixSort(test, n);
     QueryPerformanceCounter(&end);
     time_used_ns = (double)(end.QuadPart - start.QuadPart) * 1000000000.0 / (double)frequency.QuadPart;
+    fprintf(csv, "%s,Radix Sort,%.0f\n", filename, time_used_ns);
     printf("Radix Sort: %.0f ns\n", time_used_ns);
 
     free(original);
     free(test);
+
+    fclose(csv);
 
     return 0;
 }

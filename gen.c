@@ -4,11 +4,17 @@
 
 int main()
 {
-    int n, choice;
+    int n, choice, datatype;
     char filename[100];
 
     printf("Numbers to generate: ");
     scanf("%d", &n);
+
+    printf("Select data format:\n");
+    printf("1. Integers\n");
+    printf("2. Floats\n");
+    printf("Choice (1 or 2): ");
+    scanf("%d", &datatype);
 
     printf("Select data type:\n");
     printf("1. Fully Random\n");
@@ -30,31 +36,66 @@ int main()
         return 1;
     }
 
-    for (int i = 0; i < n; i++)
+    if (datatype == 1)
     {
-        int rndm_prct = rand() % 100;
-        if (choice == 1)
+        for (int i = 0; i < n; i++)
         {
-            fprintf(fp, "%d\n", rand());
-        }
-        else if (choice == 2)
-        {
-            if (rndm_prct < 5)
+            int rndm_prct = rand() % 100;
+            if (choice == 1)
             {
                 fprintf(fp, "%d\n", rand());
             }
-            else
+            else if (choice == 2)
             {
-                fprintf(fp, "%d\n", i);
+                if (rndm_prct < 5)
+                {
+                    fprintf(fp, "%d\n", rand());
+                }
+                else
+                {
+                    fprintf(fp, "%d\n", i);
+                }
+            }
+            else if (choice == 3)
+            {
+                fprintf(fp, "%d\n", i + 1);
+            }
+            else if (choice == 4)
+            {
+                fprintf(fp, "%d\n", n - i);
             }
         }
-        else if (choice == 3)
+    }
+    else if (datatype == 2)
+    {
+        for (int i = 0; i < n; i++)
         {
-            fprintf(fp, "%d\n", i + 1);
-        }
-        else if (choice == 4)
-        {
-            fprintf(fp, "%d\n", n - i);
+            float rnd_float = ((float)rand() / (float)(RAND_MAX)) * 100000.0;
+
+            if (choice == 1)
+            {
+                fprintf(fp, "%f\n", rnd_float);
+            }
+            else if (choice == 2)
+            {
+                int rndm_prct = rand() % 100;
+                if (rndm_prct < 5)
+                {
+                    fprintf(fp, "%f\n", rnd_float);
+                }
+                else
+                {
+                    fprintf(fp, "%f\n", (float)(i + 1));
+                }
+            }
+            else if (choice == 3)
+            {
+                fprintf(fp, "%f\n", (float)(i + 1));
+            }
+            else if (choice == 4)
+            {
+                fprintf(fp, "%f\n", (float)(n - i));
+            }
         }
     }
 
