@@ -1,0 +1,14 @@
+int_random_100k.txt,Bubble Sort,28733725100
+int_random_100k.txt,Insertion Sort,6576202400
+int_random_100k.txt,Selection Sort,11520384400
+int_random_100k.txt,Merge Sort,18049500
+int_random_100k.txt,Quick Sort,16224500
+int_random_100k.txt,Heap Sort,26382400
+int_random_100k.txt,Radix Sort,11851500
+int_partially_100k.txt,Bubble Sort,13202899700
+int_partially_100k.txt,Insertion Sort,492272300
+int_partially_100k.txt,Selection Sort,11692226900
+int_partially_100k.txt,Merge Sort,10089800
+int_partially_100k.txt,Quick Sort,37957200
+int_partially_100k.txt,Heap Sort,20906600
+int_partially_100k.txt,Radix Sort,10655200
