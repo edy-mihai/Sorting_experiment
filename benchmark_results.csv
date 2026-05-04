@@ -1,14 +1,92 @@
-int_random_100k.txt,Bubble Sort,28733725100
-int_random_100k.txt,Insertion Sort,6576202400
-int_random_100k.txt,Selection Sort,11520384400
-int_random_100k.txt,Merge Sort,18049500
-int_random_100k.txt,Quick Sort,16224500
-int_random_100k.txt,Heap Sort,26382400
-int_random_100k.txt,Radix Sort,11851500
-int_partially_100k.txt,Bubble Sort,13202899700
-int_partially_100k.txt,Insertion Sort,492272300
-int_partially_100k.txt,Selection Sort,11692226900
-int_partially_100k.txt,Merge Sort,10089800
-int_partially_100k.txt,Quick Sort,37957200
-int_partially_100k.txt,Heap Sort,20906600
-int_partially_100k.txt,Radix Sort,10655200
+
+int_random_10k.txt,Bubble Sort,57962400
+int_random_10k.txt,Insertion Sort,20161500
+int_random_10k.txt,Selection Sort,31156600
+int_random_10k.txt,Merge Sort,694900
+int_random_10k.txt,Quick Sort,471700
+int_random_10k.txt,Heap Sort,802500
+int_random_10k.txt,Radix Sort,253400
+
+int_random_50k.txt,Bubble Sort,1440012100
+int_random_50k.txt,Insertion Sort,330484100
+int_random_50k.txt,Selection Sort,703681600
+int_random_50k.txt,Merge Sort,4215200
+int_random_50k.txt,Quick Sort,2830400
+int_random_50k.txt,Heap Sort,4942000
+int_random_50k.txt,Radix Sort,1275700
+
+int_random_100k.txt,Bubble Sort,10008795600
+int_random_100k.txt,Insertion Sort,1827962500
+int_random_100k.txt,Selection Sort,2831582900
+int_random_100k.txt,Merge Sort,8396500
+int_random_100k.txt,Quick Sort,6701200
+int_random_100k.txt,Heap Sort,11006200
+int_random_100k.txt,Radix Sort,2955400
+
+int_partially_10k.txt,Bubble Sort,43708700
+int_partially_10k.txt,Insertion Sort,1534400
+int_partially_10k.txt,Selection Sort,31865400
+int_partially_10k.txt,Merge Sort,527400
+int_partially_10k.txt,Quick Sort,2459900
+int_partially_10k.txt,Heap Sort,664500
+int_partially_10k.txt,Radix Sort,293300
+
+int_partially_50k.txt,Bubble Sort,1186109400
+int_partially_50k.txt,Insertion Sort,30792900
+int_partially_50k.txt,Selection Sort,747878800
+int_partially_50k.txt,Merge Sort,2055400
+int_partially_50k.txt,Quick Sort,4725100
+int_partially_50k.txt,Heap Sort,4108300
+int_partially_50k.txt,Radix Sort,1891100
+
+int_partially_100k.txt,Bubble Sort,5001590900
+int_partially_100k.txt,Insertion Sort,147164500
+int_partially_100k.txt,Selection Sort,3061353300
+int_partially_100k.txt,Merge Sort,3655500
+int_partially_100k.txt,Quick Sort,10342900
+int_partially_100k.txt,Heap Sort,8579400
+int_partially_100k.txt,Radix Sort,2766400
+
+int_full_10k.txt,Bubble Sort,44961400
+int_full_10k.txt,Insertion Sort,13800
+int_full_10k.txt,Selection Sort,30895800
+int_full_10k.txt,Merge Sort,316400
+int_full_10k.txt,Quick Sort,72454500
+int_full_10k.txt,Heap Sort,637500
+int_full_10k.txt,Radix Sort,288200
+
+int_full_50k.txt,Bubble Sort,852570900
+int_full_50k.txt,Insertion Sort,56300
+int_full_50k.txt,Selection Sort,778269300
+int_full_50k.txt,Merge Sort,1702800
+int_full_50k.txt,Heap Sort,3998500
+int_full_50k.txt,Radix Sort,1705300
+
+int_full_100k.txt,Bubble Sort,3357046200
+int_full_100k.txt,Insertion Sort,113000
+int_full_100k.txt,Selection Sort,3097208100
+int_full_100k.txt,Merge Sort,3173200
+int_full_100k.txt,Heap Sort,8649800
+int_full_100k.txt,Radix Sort,3287300
+
+int_reversed_10k.txt,Bubble Sort,68903000
+int_reversed_10k.txt,Insertion Sort,36908000
+int_reversed_10k.txt,Selection Sort,31649800
+int_reversed_10k.txt,Merge Sort,544200
+int_reversed_10k.txt,Quick Sort,45280900
+int_reversed_10k.txt,Heap Sort,682700
+int_reversed_10k.txt,Radix Sort,247900
+
+int_reversed_50k.txt,Bubble Sort,1721474100
+int_reversed_50k.txt,Insertion Sort,960953500
+int_reversed_50k.txt,Selection Sort,758476900
+int_reversed_50k.txt,Merge Sort,1552700
+int_reversed_50k.txt,Heap Sort,3480800
+int_reversed_50k.txt,Radix Sort,2027700
+
+int_reversed_100k.txt,Bubble Sort,6870043100
+int_reversed_100k.txt,Insertion Sort,3833668700
+int_reversed_100k.txt,Selection Sort,3047824900
+int_reversed_100k.txt,Merge Sort,3346900
+int_reversed_100k.txt,Heap Sort,7996600
+int_reversed_100k.txt,Radix Sort,3132500
